@@ -42,6 +42,9 @@
     <ClCompile Include="연결리스트정렬메인.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Linked List.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="연결리스트.h">
