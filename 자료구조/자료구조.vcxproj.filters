@@ -36,5 +36,16 @@
     <ClCompile Include="배열포인터1차원.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="연결리스트.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="연결리스트정렬메인.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="연결리스트.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
