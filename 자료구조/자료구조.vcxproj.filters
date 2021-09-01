@@ -30,5 +30,8 @@
     <ClCompile Include="구조체(2).c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="factorial.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
