@@ -1,30 +1,35 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<stdlib.h> //malloc free ÇÔ¼ö°¡ ¼±¾ğµÈ Çì´õ ÆÄÀÏ
+#include<stdlib.h> //malloc free í•¨ìˆ˜ê°€ ì„ ì–¸ëœ í—¤ë” íŒŒì¼
 
 typedef struct NODE ND;
-struct NODE {               // ¿¬°á ¸®½ºÆ®ÀÇ ³ëµå ±¸Á¶Ã¼
-	struct NODE* next;      // ´ÙÀ½ ³ëµåÀÇ ÁÖ¼Ò¸¦ ÀúÀåÇÒ Æ÷ÀÎÅÍ
-	int data;               // µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ ¸â¹ö
+struct NODE {               // ì—°ê²° ë¦¬ìŠ¤íŠ¸ì˜ ë…¸ë“œ êµ¬ì¡°ì²´
+	struct NODE* next;      // ë‹¤ìŒ ë…¸ë“œì˜ ì£¼ì†Œë¥¼ ì €ì¥í•  í¬ì¸í„°
+	int data;               // ë°ì´í„°ë¥¼ ì €ì¥í•  ë©¤ë²„
 };
 
 int main() {
-	struct NODE* head = malloc(sizeof(struct NODE));     //¸Ó¸® ³ëµå »ı¼º
-	//ND* head = mallocf(sizeof(ND))                     //¸Ó¸® ³ëµå´Â µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏÁö ¾ÊÀ½;
+	struct NODE* head = malloc(sizeof(struct NODE));     //ë¨¸ë¦¬ ë…¸ë“œ ìƒì„±
+	//ND* head = mallocf(sizeof(ND))                     //ë¨¸ë¦¬ ë…¸ë“œëŠ” ë°ì´í„°ë¥¼ ì €ì¥í•˜ì§€ ì•ŠìŒ;
 
-	struct NODE* node1 = malloc(sizeof(struct NODE));    //Ã¹ ¹øÂ° ³ëµå »ı¼º
-	head->next = node1;                                  //¸Ó¸® ³ëµå ´ÙÀ½Àº Ã¹ ¹øÂ° ³ëµå
-	node1->data = 10;                                    //Ã¹ ¹øÂ° ³ëµå¿¡ 10 ÀúÀå
+	struct NODE* node1 = malloc(sizeof(struct NODE));    //ì²« ë²ˆì§¸ ë…¸ë“œ ìƒì„±
+	head->next = node1;                                  //ë¨¸ë¦¬ ë…¸ë“œ ë‹¤ìŒì€ ì²« ë²ˆì§¸ ë…¸ë“œ
+	node1->data = 10;                                    //ì²« ë²ˆì§¸ ë…¸ë“œì— 10 ì €ì¥
 
-	struct NODE* node2 = malloc(sizeof(struct NODE));    //µÎ ¹øÂ° ³ëµå »ı¼º
-	node1->next = node2;                                 //Ã¹ ¹øÂ° ³ëµå ´ÙÀ½Àº µÎ ¹øÂ° ³ëµå
-	node2->data = 20;                                    //µÎ ¹øÂ° ³ëµå¿¡ 20 ÀúÀå
+	struct NODE* node2 = malloc(sizeof(struct NODE));    //ë‘ ë²ˆì§¸ ë…¸ë“œ ìƒì„±
+	node1->next = node2;                                 //ì²« ë²ˆì§¸ ë…¸ë“œ ë‹¤ìŒì€ ë‘ ë²ˆì§¸ ë…¸ë“œ
+	node2->data = 20;                                    //ë‘ ë²ˆì§¸ ë…¸ë“œì— 20 ì €ì¥
 
-	node2->next = NULL;                                  //µÎ ¹øÂ° ³ëµå ´ÙÀ½Àº ³ëµå°¡ ¾øÀ½(NULL)
+	node2->next = NULL;                                  //ë‘ ë²ˆì§¸ ë…¸ë“œ ë‹¤ìŒì€ ë…¸ë“œê°€ ì—†ìŒ(NULL)
 
-	struct NODE* curr = head->next;                      //¿¬°á ¸®½ºÆ® ¼øÈ­¿ë Æ÷ÀÎÅÍ¿¡ Ã¹ ¹øÂ° ³ëµåÀÇ ÁÖ¼Ò ÀúÀå
-	while (curr != NULL)                                 //Æ÷ÀÎÅÍ°¡ NULLÀÌ ¾Æ´Ò ¶§ °è¼Ó ¹İº¹
+	struct NODE* curr = head->next;                      //ì—°ê²° ë¦¬ìŠ¤íŠ¸ ìˆœí™”ìš© í¬ì¸í„°ì— ì²« ë²ˆì§¸ ë…¸ë“œì˜ ì£¼ì†Œ ì €ì¥
+	while (curr != NULL)                                 //í¬ì¸í„°ê°€ NULLì´ ì•„ë‹ ë•Œ ê³„ì† ë°˜ë³µ
 	{
-		printf("%d\n", curr->data);                      //ÇöÀç ³ëµåÀÇ µ¥ÀÌÅÍ Ãâ·Â
-		curr = curr->next;                               //Æ÷ÀÎÅÍ¿¡ ´ÙÀ½ ³ëµåÀÇ ÁÖ¼Ò ÀúÀå
+		printf("%d\n", curr->data);                      //í˜„ì¬ ë…¸ë“œì˜ ë°ì´í„° ì¶œë ¥
+		curr = curr->next;                               //í¬ì¸í„°ì— ë‹¤ìŒ ë…¸ë“œì˜ ì£¼ì†Œ ì €ì¥
 	}
+	
+	free(node2);
+	free(node1);
+	free(head);
+}
